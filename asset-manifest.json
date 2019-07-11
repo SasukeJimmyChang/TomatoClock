@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/TomatoClock/static/css/main.87916bd9.chunk.css",
+    "main.js": "/TomatoClock/static/js/main.a924e72f.chunk.js",
+    "main.js.map": "/TomatoClock/static/js/main.a924e72f.chunk.js.map",
+    "runtime~main.js": "/TomatoClock/static/js/runtime~main.cae2c59d.js",
+    "runtime~main.js.map": "/TomatoClock/static/js/runtime~main.cae2c59d.js.map",
+    "static/js/2.fdc00fc9.chunk.js": "/TomatoClock/static/js/2.fdc00fc9.chunk.js",
+    "static/js/2.fdc00fc9.chunk.js.map": "/TomatoClock/static/js/2.fdc00fc9.chunk.js.map",
+    "index.html": "/TomatoClock/index.html",
+    "precache-manifest.e363b2388b4e4b754c56c378e8286167.js": "/TomatoClock/precache-manifest.e363b2388b4e4b754c56c378e8286167.js",
+    "service-worker.js": "/TomatoClock/service-worker.js",
+    "static/css/main.87916bd9.chunk.css.map": "/TomatoClock/static/css/main.87916bd9.chunk.css.map",
+    "static/media/logo.svg": "/TomatoClock/static/media/logo.5d5d9eef.svg"
+  }
+}
