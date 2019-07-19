@@ -1,7 +1,7 @@
-
 import React from "react";
-import { Button } from './Buttons';
-import TimerText from './Text';
+import { Button } from '../../components/Buttons';
+import TimerText from '../../components/Text';
+import { ProgressBar } from 'react-bootstrap';
 export default class CountDownTimer extends React.Component {
 
   constructor(props) {
@@ -18,30 +18,24 @@ export default class CountDownTimer extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`MTFK componentDidMount`)
-    // this.startTimer();
   }
 
   componentWillUnmount() {
-    console.log(`MTFK componentWillUnmount`)
     clearInterval(this.interval);
   }
 
   startTimer = () => {
-    console.log(`MTFK startTimer`)
     this.interval = setInterval(() => {
       this.updateTimer();
     }, 1000);
   }
 
   stopTimer = (initMin, initSec) => {
-    console.log(`stopTimer`)
     this.setState(state => ({ ...state, isPlaying: false, currentMin: initMin, currentSec: initSec }));
     clearInterval(this.interval);
   }
 
   pauseTimer = () => {
-    console.log(`pauseTimer`)
     this.setState(state => ({ ...state, isPlaying: false }));
     clearInterval(this.interval);
   }
@@ -93,7 +87,6 @@ export default class CountDownTimer extends React.Component {
 
   resetTimer = () => {
     const { initMin, initSec } = this.state;
-    console.log(`MTFK resetTimer`)
     this.setState(state => ({
       ...state,
       isPlaying: false,
@@ -106,18 +99,17 @@ export default class CountDownTimer extends React.Component {
 
   render() {
     const {
-      isPlaying,
-      isStop,
       currentMin,
       currentSec,
-      initMin,
-      initSec,
       playButtonText
     } = this.state;
 
     return (
       <div className="App">
         <header className="App-header">
+
+          <ProgressBar now={60} />
+          {/* <Button variant="primary">Primary</Button> */}
           <TimerText>
             {currentMin}:{currentSec}
           </TimerText>
