@@ -2,6 +2,10 @@ import React from "react";
 import { Button } from '../../components/Buttons';
 import TimerText from '../../components/Text';
 import { ProgressBar } from 'react-bootstrap';
+import { Line, Circle } from 'rc-progress';
+
+
+const CIRCLE_COLOR = '#3FC7FA';
 export default class CountDownTimer extends React.Component {
 
   constructor(props) {
@@ -14,6 +18,7 @@ export default class CountDownTimer extends React.Component {
       isPlaying: false,
       isStop: false,
       playButtonText: 'Start',
+      progress: 0,
     };
   }
 
@@ -53,9 +58,13 @@ export default class CountDownTimer extends React.Component {
     if (isPlaying) {
       // Handle timer
       if (currentMin > 0) {
-        this.setState(state => ({ ...state, currentMin: currentMin - 1, currentSec: 59 }));
+        this.setState(state => ({ ...state, currentMin: currentMin - 1, currentSec: 59 }), () => this.handlePercent());
       } else {
-        this.setState(state => ({ ...state, currentSec: currentSec - 1 }));
+        if (currentSec === 0) {
+          this.resetTimer();
+        } else {
+          this.setState(state => ({ ...state, currentSec: currentSec - 1 }), () => this.handlePercent());
+        }
       }
       return;
     }
@@ -97,19 +106,33 @@ export default class CountDownTimer extends React.Component {
     }));
   }
 
+  handlePercent = () => {
+    const { currentSec, currentMin, initSec, initMin } = this.state;
+    const couputedPercent = 100 * (1 - ((currentSec + currentMin * 60) / (initSec + initMin * 60)).toFixed(2));
+    console.log('couputedPercent', couputedPercent);
+    this.setState({ percent: couputedPercent });
+  }
+
   render() {
     const {
       currentMin,
       currentSec,
-      playButtonText
+      playButtonText,
+      percent
     } = this.state;
+
+    const circleContainerStyle = {
+      width: '250px',
+      height: '250px',
+      display: 'inline-block',
+    };
 
     return (
       <div className="App">
         <header className="App-header">
-
-          <ProgressBar now={60} />
-          {/* <Button variant="primary">Primary</Button> */}
+          <div style={circleContainerStyle}>
+            <Circle percent={percent} strokeWidth="6" strokeLinecap="round" strokeColor={CIRCLE_COLOR} />
+          </div>
           <TimerText>
             {currentMin}:{currentSec}
           </TimerText>
