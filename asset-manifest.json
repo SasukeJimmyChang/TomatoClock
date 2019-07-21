@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/TomatoClock/static/css/main.87916bd9.chunk.css",
-    "main.js": "/TomatoClock/static/js/main.f93da9dc.chunk.js",
-    "main.js.map": "/TomatoClock/static/js/main.f93da9dc.chunk.js.map",
+    "main.js": "/TomatoClock/static/js/main.21c38301.chunk.js",
+    "main.js.map": "/TomatoClock/static/js/main.21c38301.chunk.js.map",
     "runtime~main.js": "/TomatoClock/static/js/runtime~main.cae2c59d.js",
     "runtime~main.js.map": "/TomatoClock/static/js/runtime~main.cae2c59d.js.map",
     "static/js/2.b24063bd.chunk.js": "/TomatoClock/static/js/2.b24063bd.chunk.js",
     "static/js/2.b24063bd.chunk.js.map": "/TomatoClock/static/js/2.b24063bd.chunk.js.map",
     "index.html": "/TomatoClock/index.html",
-    "precache-manifest.791b3df42e174896bdfc025f84ff25c9.js": "/TomatoClock/precache-manifest.791b3df42e174896bdfc025f84ff25c9.js",
+    "precache-manifest.4e5d326fe929a69eaae0f865ab9d9f10.js": "/TomatoClock/precache-manifest.4e5d326fe929a69eaae0f865ab9d9f10.js",
     "service-worker.js": "/TomatoClock/service-worker.js",
     "static/css/main.87916bd9.chunk.css.map": "/TomatoClock/static/css/main.87916bd9.chunk.css.map",
     "static/media/logo.svg": "/TomatoClock/static/media/logo.5d5d9eef.svg"
