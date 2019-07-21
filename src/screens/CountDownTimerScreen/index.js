@@ -11,9 +11,9 @@ export default class CountDownTimer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      initMin: 1,
+      initMin: 25,
       initSec: 0,
-      currentMin: 1,
+      currentMin: 25,
       currentSec: 0,
       isPlaying: false,
       isStop: false,
@@ -57,14 +57,14 @@ export default class CountDownTimer extends React.Component {
 
     if (isPlaying) {
       // Handle timer
-      if (currentMin > 0) {
-        this.setState(state => ({ ...state, currentMin: currentMin - 1, currentSec: 59 }), () => this.handlePercent());
-      } else {
-        if (currentSec === 0) {
-          this.resetTimer();
+      if (currentSec === 0) {
+        if (currentMin > 0) {
+          this.setState(state => ({ ...state, currentMin: currentMin - 1, currentSec: 59 }), () => this.handlePercent());
         } else {
-          this.setState(state => ({ ...state, currentSec: currentSec - 1 }), () => this.handlePercent());
+          this.resetTimer();
         }
+      } else {
+        this.setState(state => ({ ...state, currentSec: currentSec - 1 }), () => this.handlePercent());
       }
       return;
     }

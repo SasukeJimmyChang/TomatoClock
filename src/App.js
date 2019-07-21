@@ -8,9 +8,9 @@ const DarkTheme = {
   backgroundColor: '#282c34',
   fontColor: 'white',
   borderColor: 'rgba(255,255,255,0.5)',
-  primaryColor: '#f95550',
-  primaryColorLight: '#ec6763',
-  primaryColorDark: '#dc4641',
+  primaryColor: '#3FC7FA',
+  primaryColorLight: '#5FAAFF',
+  primaryColorDark: '#5FAAFF',
   secondaryColor: '#34c5dc',
   secondaryColorLight: '#60ecec',
   secondaryColorDark: '#1992ad'
